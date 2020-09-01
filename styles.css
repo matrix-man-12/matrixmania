@@ -1,0 +1,171 @@
+body{
+  background: rgba(0,0,0,0.9);
+  /* last value is opacity */
+  margin:0;
+  color:#fff;
+  font-family: 'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
+
+.showcase::after{
+  content:"";
+  height: 100vh;
+  width: 100%;
+  background-image: url("images/computer.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  filter: blur(10px);
+  -webkit-filter:blur(10px);
+  transition:all 1000ms;
+}
+
+.showcase:hover::after{
+  filter: blur(0px);
+  -webkit-filter:blur(0px);
+}
+
+.showcase:hover .content {
+  filter: blur(1px);
+  -webkit-filter:blur(1px);
+}
+
+.content{
+  position: absolute;
+  z-index: 1;
+  top: 10%;
+  left: 50%;
+  margin-top: 60px;
+  margin-left: -350px;
+  width: 350px;
+  height: 400px;
+  text-align: center;
+  transition: all 1500ms;
+}
+
+.newContent{
+  position: absolute;
+  z-index: 1;
+  top: 10%;
+  left: 50%;
+  margin-top: 140px;
+  margin-left: 250px;
+  width: 350px;
+  height: 400px;
+  text-align: center;
+  transition: all 1500ms;
+  color: #f4f4f4;
+}
+
+.content .logo{
+  height: 220px;
+  width: 220px;
+}
+
+.content .title{
+  font-size: 2.2rem;
+  margin-top: 1rem;
+  color: #100303;
+}
+
+.content .text{
+  line-height: 1.7;
+  margin-top: 1rem;
+  color: #222831;
+
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  overflow: hidden;
+  padding: 4rem 1rem;
+}
+
+.grid-3{
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr ;
+}
+
+.color{
+  color: #f4f4f4;
+}
+
+.grid-2{
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr ;
+}
+
+.center{
+  text-align:center;
+  margin: auto;
+}
+
+.bg-light{
+  background: #f4f4f4;
+  color: #333;
+}
+
+.bg-dark{
+  background:#333;
+  color: #f4f4f4;
+}
+
+footer p{
+  margin:0;
+}
+
+footer{
+  padding: 2rem;
+}
+
+/*Small Screen*/
+
+@media(max-width:560px){
+  .showcase::after{
+    height: 50vh;
+  }
+
+  .content{
+    top:4%;
+    margin-top: 5px;
+    margin-left: -170px;
+  }
+
+  .content .logo{
+    height: 140px;
+    width: 140px;
+  }
+
+  .content .text{
+    display: none;
+  }
+
+  .newContent{
+    display: none;
+  }
+
+  .grid-3, .grid-2{
+    grid-template-columns: 1fr  ;
+  }
+
+  .services div{
+    border-bottom: #333 dashed 1px;
+    padding: 1.2rem 1rem;
+  }
+}
+
+/*Landscape*/
+
+@media (max-height:500px) {
+  .content .title,
+  .content .text{
+    display: none;
+  }
+
+  .content{
+    top:0;
+  }
+}
